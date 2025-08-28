@@ -1,67 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zero2Bank</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero2Bank - From Broke to Ballin'</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #111, #222);
-      color: white;
-      text-align: center;
-    }
-    header {
-      padding: 2rem;
-      background: #0f0f0f;
-      border-bottom: 2px solid #0ff;
-    }
-    h1 {
-      font-size: 2.5rem;
-      color: #0ff;
-    }
-    p {
-      font-size: 1.2rem;
-      margin: 1rem 0;
-    }
-    .btn {
-      background: #0ff;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-    .btn:hover {
-      background: #fff;
-      color: #000;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #0a0a0a; color: #fff; }
+    header { background: #111; padding: 2rem; text-align: center; border-bottom: 3px solid #0ff; }
+    header h1 { margin: 0; color: #0ff; font-size: 3rem; }
+    header p { font-style: italic; margin-top: 0.5rem; }
+    nav { margin-top: 1rem; }
+    nav a { margin: 0 15px; color: #fff; text-decoration: none; font-weight: bold; }
+    nav a:hover { color: #0ff; }
+    section { padding: 2rem; max-width: 900px; margin: auto; }
+    h2 { color: #0ff; }
+    input, select { padding: 0.5rem; margin: 0.25rem 0; border-radius: 5px; border: none; }
+    button { padding: 0.5rem 1rem; background: #0ff; color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    button:hover { background: #fff; }
+    .calculator, .investor { background: #111; padding: 1rem; margin-top: 1rem; border-radius: 10px; border: 2px solid #0ff; }
+    footer { background: #111; padding: 1rem; text-align: center; color: #666; margin-top: 2rem; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Zero2Bank</h1>
-    <p>From broke to ballin'</p>
-    <a href="#budgeting" class="btn">Get Started</a>
-  </header>
 
-  <main>
-    <section id="budgeting">
-      <h2>Budgeting</h2>
-      <p>Track your money like a pro. Small moves = big results.</p>
-    </section>
+<header>
+  <h1>Zero2Bank</h1>
+  <p>From Broke to Ballin'</p>
+  <nav>
+    <a href="#budgeting">Budgeting</a>
+    <a href="#saving">Saving</a>
+    <a href="#investing">Investing</a>
+    <a href="#taxes">Taxes</a>
+  </nav>
+</header>
 
-    <section id="saving">
-      <h2>Saving</h2>
-      <p>Learn the power of stacking cash, step by step.</p>
-    </section>
+<section id="budgeting">
+  <h2>Budgeting</h2>
+  <p>Track all income and expenses to see exactly where your money goes.</p>
 
-    <section id="investing">
-      <h2>Investing</h2>
-      <p>From shares to crypto, learn how to grow your wealth safely.</p>
-    </section>
-  </main>
+  <div class="calculator">
+    <h3>Advanced Budget Calculator</h3>
+    <label>Monthly Income: $<input type="number" id="income" value="0"></label><br>
+    <label>Rent: $<input type="number" id="rent" value="0"></label><br>
+    <label>Groceries: $<input type="number" id="groceries" value="0"></label><br>
+    <label>Utilities: $<input type="number" id="utilities" value="0"></label><br>
+    <label>Transport: $<input type="number" id="transport" value="0"></label><br>
+    <label>Other Expenses: $<input type="number" id="other" value="0"></label><br>
+    <button onclick="calculateBudget()">Calculate Remaining</button>
+    <p id="budgetResult"></p>
+  </div>
+</section>
+
+<section id="saving">
+  <h2>Saving</h2>
+  <p>Smart saving strategies to build your cash reserves faster.</p>
+</section>
+
+<section id="investing">
+  <h2>Investing</h2>
+  <p>Simulate your investments and see how money grows over time.</p>
+
+  <div class="investor">
+    <h3>Investment Simulator</h3>
+    <label>Initial Investment: $<input type="number" id="investAmount" value="1000"></label><br>
+    <label>Annual Return Rate (%): <input type="number" id="returnRate" value="5"></label><br>
+    <label>Years: <input type="number" id="years" value="10"></label><br>
+    <button onclick="simulateInvestment()">Simulate Growth</button>
+    <p id="investmentResult"></p>
+  </div>
+</section>
+
+<section id="taxes">
+  <h2>Taxes</h2>
+  <p>Understand taxes and deductions to keep more of your money.</p>
+</section>
+
+<footer>
+  <p>© 2025 Zero2Bank | From Broke to Ballin'</p>
+</footer>
+
+<script>
+  function calculateBudget() {
+    const income = parseFloat(document.getElementById('income').value) || 0;
+    const rent = parseFloat(document.getElementById('rent').value) || 0;
+    const groceries = parseFloat(document.getElementById('groceries').value) || 0;
+    const utilities = parseFloat(document.getElementById('utilities').value) || 0;
+    const transport = parseFloat(document.getElementById('transport').value) || 0;
+    const other = parseFloat(document.getElementById('other').value) || 0;
+
+    const totalExpenses = rent + groceries + utilities + transport + other;
+    const remaining = income - totalExpenses;
+
+    document.getElementById('budgetResult').textContent =
+      remaining >= 0
+        ? `You have $${remaining.toFixed(2)} left this month.`
+        : `You are over budget by $${Math.abs(remaining).toFixed(2)}!`;
+  }
+
+  function simulateInvestment() {
+    const amount = parseFloat(document.getElementById('investAmount').value) || 0;
+    const rate = parseFloat(document.getElementById('returnRate').value) / 100;
+    const years = parseInt(document.getElementById('years').value) || 0;
+
+    let finalAmount = amount;
+    for (let i = 0; i < years; i++) {
+      finalAmount *= (1 + rate);
+    }
+
+    document.getElementById('investmentResult').textContent =
+      `After ${years} years, your investment will grow to $${finalAmount.toFixed(2)}.`;
+  }
+</script>
+
 </body>
 </html>
