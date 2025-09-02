@@ -1,98 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zero2Bank - From Broke to Ballin'</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #00ff00;
-  }
-  header {
-    background: #111;
-    padding: 2rem;
-    text-align: center;
-    border-bottom: 3px solid #00ff00;
-  }
-  header h1 {
-    margin: 0;
-    color: #00ff00;
-    font-size: 3rem;
-  }
-  header p {
-    font-style: italic;
-    margin-top: 0.5rem;
-    color: #0f0;
-  }
-  nav {
-    margin-top: 1rem;
-  }
-  nav a {
-    margin: 0 15px;
-    color: #00ff00;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  nav a:hover {
-    color: #0f0;
-  }
-  section {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-  }
-  h2 {
-    color: #0f0;
-  }
-  input, select {
-    padding: 0.5rem;
-    margin: 0.25rem 0;
-    border-radius: 5px;
-    border: none;
-  }
-  button {
-    padding: 0.5rem 1rem;
-    background: #00ff00;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  button:hover {
-    background: #0f0;
-  }
-  .calculator, .investor {
-    background: #111;
-    padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 10px;
-    border: 2px solid #00ff00;
-  }
-  footer {
-    background: #111;
-    padding: 1rem;
-    text-align: center;
-    color: #666;
-    margin-top: 2rem;
-  }
-  .icon {
-    cursor: pointer;
-    text-align: center;
-    background: rgba(0,255,0,0.2);
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 18px;
-    box-shadow: 2px 2px 5px rgba(0,255,0,0.2);
-  }
-  .app-window {
-    z-index: 10;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero2Bank - From Broke to Ballin'</title>
+  <style>
+    /* --- General Styling --- */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #0f0;
+    }
+    header {
+      background: #111;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 3px solid #0f0;
+    }
+    header h1 {
+      margin: 0;
+      color: #0f0;
+      font-size: 3rem;
+    }
+    header p {
+      font-style: italic;
+      margin-top: 0.5rem;
+      color: #0f0;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #0f0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #0f0;
+      margin-bottom: 0.5rem;
+    }
+    input, select {
+      padding: 0.5rem;
+      margin: 0.25rem 0;
+      border-radius: 5px;
+      border: none;
+      background: #111;
+      color: #0f0;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #0f0;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #fff;
+      color: #000;
+    }
+    .calculator, .investor {
+      background: #111;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 10px;
+      border: 2px solid #0f0;
+    }
+    footer {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+      color: #666;
+      margin-top: 2rem;
+    }
+
+    /* --- Desktop/Apps --- */
+    .icon {
+      cursor: pointer;
+      text-align: center;
+      background: rgba(0,255,0,0.1);
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 18px;
+      box-shadow: 2px 2px 5px rgba(0,255,0,0.3);
+    }
+    .app-window {
+      z-index: 10;
+      color: #000;
+    }
+    #desktop {
+      background: #111;
+      border: 2px solid #0f0;
+      border-radius: 10px;
+      padding: 10px;
+      height: 600px;
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
 </head>
 <body>
 
@@ -100,7 +117,7 @@
   <h1>Zero2Bank</h1>
   <p>From Broke to Ballin'</p>
   <nav>
-    <a href="#about">About</a>
+    <a href="#whyMoney">Why Money Matters</a>
     <a href="#budgeting">Budgeting</a>
     <a href="#saving">Saving</a>
     <a href="#investing">Investing</a>
@@ -108,27 +125,19 @@
   </nav>
 </header>
 
-<section id="about">
-  <h2>About Zero2Bank</h2>
-  <p>Zero2Bank is designed to empower young people to master their finances from an early age. Our mission is to provide accessible, engaging tools that teach budgeting, saving, investing, and understanding taxes. By developing these skills now, users build a solid foundation for financial independence, smarter decision-making, and long-term wealth.</p>
-  <h3>Why Money Skills Matter</h3>
-  <p>Understanding money isn’t just about avoiding debt or buying cool gadgets—it’s about securing your future. Learning to budget, save, and invest early helps you:</p>
-  <ul>
-    <li>Make informed financial decisions as an adult</li>
-    <li>Avoid unnecessary debt and financial stress</li>
-    <li>Reach life goals, like education, travel, or starting a business</li>
-    <li>Develop discipline and confidence with money</li>
-  </ul>
-  <p>Zero2Bank equips you with these skills so that money works for you, not the other way around.</p>
+<section id="whyMoney">
+  <h2>Why Money Matters & Why Zero2Bank Helps</h2>
+  <p>Money is more than numbers—it’s freedom, opportunity, and the power to shape your future. Learning to manage it early gives you control over your life, prevents unnecessary stress, and builds habits that compound over time. Zero2Bank exists to give teens and young adults the tools and knowledge to handle money like a pro, track progress, and make smarter choices. Our goal is to transform your understanding from “just spending” to building wealth, preparing you for big purchases, investments, and life opportunities ahead.</p>
 </section>
 
 <section id="budgeting">
   <h2>Budgeting</h2>
-  <p>Budgeting is the cornerstone of financial responsibility. Track your income and allocate it wisely to needs, wants, and savings. The 50/30/20 rule is a great start: 50% needs, 30% wants, 20% savings. Start small, stay consistent, and track your progress to build discipline.</p>
+  <p>Budgeting is the first step to mastering money. Track your income, categorize your spending, and plan your savings. The 50/30/20 rule is a powerful tool: 50% needs, 30% wants, 20% savings. Start small, be consistent, and watch discipline turn into financial freedom.</p>
 
   <div class="calculator">
     <h3>Smart Budget Calculator</h3>
     <label>Monthly Income: $<input type="number" id="income" value="0"></label><br>
+    
     <div id="expenses">
       <h4>Expenses</h4>
       <div>
@@ -138,19 +147,21 @@
     </div>
     <button onclick="addExpense()">+ Add Expense</button><br><br>
     <button onclick="calculateBudget()">Calculate Budget</button>
-    <div id="results" style="margin-top:1rem;"></div>
+
+    <div id="budgetResult" style="margin-top:1rem;"></div>
   </div>
 </section>
 
 <section id="saving">
   <h2>Saving</h2>
-  <p>Saving sets aside money now so you can afford bigger goals in the future. Start small, separate your savings from spending money, and track your progress consistently.</p>
+  <p>Saving gives you safety, independence, and the ability to reach bigger goals. By consistently setting money aside, you build a habit that benefits your future self and prepares you for investments, emergencies, or major purchases.</p>
 
   <div class="calculator" id="savingTracker">
     <h3>💰 Savings Progress Tracker</h3>
     <label>Savings Goal: $<input type="number" id="savingGoal" value="500"></label><br>
     <label>Current Savings: $<input type="number" id="currentSavings" value="0"></label><br>
     <button onclick="updateSavings()">Update Progress</button>
+
     <div style="margin-top:1rem; background:#222; border-radius:8px; height:30px; width:100%; overflow:hidden;">
       <div id="savingsBar" style="background:#0f0; height:100%; width:0%; text-align:center; color:#000; line-height:30px; font-weight:bold;">0%</div>
     </div>
@@ -160,21 +171,58 @@
 
 <section id="investing">
   <h2>Investing</h2>
-  <p>Investing allows your money to grow over time. Learn safe, long-term strategies, such as index funds or ETFs. Avoid risky “get rich quick” schemes. Start small, be consistent, and watch your wealth grow over years.</p>
+  <p>Investing allows your money to grow beyond what you can earn from work alone. By learning safe, consistent investing early, you build wealth over time and gain financial freedom. Zero2Bank gives you a simulation environment to practice investing without real-world risk.</p>
 
-  <div class="calculator">
-    <h3>Investment Simulator</h3>
-    <label>Amount: $<input type="number" id="investAmount" value="1000"></label><br>
-    <label>Annual Return Rate (%): <input type="number" id="returnRate" value="5"></label><br>
-    <label>Years: <input type="number" id="years" value="5"></label><br>
-    <button onclick="simulateInvestment()">Calculate Growth</button>
-    <div id="investmentResult" style="margin-top:1rem;"></div>
+  <div id="desktop">
+    <div id="icons" class="p-4 grid grid-cols-4 gap-6">
+      <div class="icon" onclick="openApp('bankApp')">🏦<br>Zero2Bank</div>
+      <div class="icon" onclick="openApp('investApp')">📈<br>Investments</div>
+      <div class="icon" onclick="openApp('docsApp')">📂<br>Help Docs</div>
+    </div>
+
+    <!-- Bank App -->
+    <div id="bankApp" class="app-window hidden absolute top-12 left-12 w-96 bg-black border border-green-500 shadow-lg p-4 rounded-lg">
+      <h3>Zero2Bank</h3>
+      <p>Balance: $<span id="bankBalance">1000</span></p>
+      <button onclick="depositMoney()">Deposit +$100</button>
+      <button onclick="withdrawMoney()">Withdraw -$100</button>
+      <button onclick="closeApp('bankApp')">Close</button>
+    </div>
+
+    <!-- Investment App -->
+    <div id="investApp" class="app-window hidden absolute top-24 left-24 w-[500px] bg-black border border-green-500 shadow-lg p-4 rounded-lg">
+      <h3>Investment Market</h3>
+      <div id="market" class="grid grid-cols-2 gap-4 mb-4">
+        <div class="border p-2 rounded">
+          <p>Stock A - $<span id="stockA">50</span></p>
+          <button onclick="buyInvestment('stockA',50)">Buy</button>
+          <button onclick="sellInvestment('stockA',50)">Sell</button>
+        </div>
+        <div class="border p-2 rounded">
+          <p>Crypto X - $<span id="cryptoX">200</span></p>
+          <button onclick="buyInvestment('cryptoX',200)">Buy</button>
+          <button onclick="sellInvestment('cryptoX',200)">Sell</button>
+        </div>
+      </div>
+      <h4>Your Portfolio:</h4>
+      <ul id="portfolio"></ul>
+      <button onclick="closeApp('investApp')">Close</button>
+    </div>
+
+    <!-- Help Docs -->
+    <div id="docsApp" class="app-window hidden absolute top-36 left-36 w-80 bg-black border border-green-500 shadow-lg p-4 rounded-lg">
+      <h3>Investment Help Docs</h3>
+      <p>💡 Stocks = ownership in companies.</p>
+      <p>💡 Crypto = digital currencies, high risk.</p>
+      <p>💡 Diversify = don’t put all money in one place.</p>
+      <button onclick="closeApp('docsApp')">Close</button>
+    </div>
   </div>
 </section>
 
 <section id="taxes">
   <h2>Taxes</h2>
-  <p>Understanding taxes ensures you pay the right amount and maximize potential refunds. Learn how income tax, Medicare, and offsets like LITO work in Australia.</p>
+  <p>Use this to estimate your Australian tax, Medicare levy, LITO, and whether you’ll get a refund or owe tax. Perfect for practicing financial planning skills.</p>
 
   <div class="calculator">
     <h3>Australian Tax & Refund Estimator</h3>
@@ -189,14 +237,14 @@
     <label>PAYG Tax Withheld: $<input type="number" id="withheld" value="0" min="0"></label><br>
     <details style="margin:0.5rem 0;">
       <summary>Advanced options</summary>
-      <label>Claim Medicare levy exemption? 
+      <label>Medicare levy exempt?
         <select id="medicareExempt">
           <option value="no" selected>No</option>
           <option value="yes">Yes</option>
         </select>
       </label><br>
     </details>
-    <button onclick="calcAustTax()">Calculate Tax & Refund</button>
+    <button onclick="calcAustTax()">Calculate tax & refund</button>
     <div id="taxOutcome" style="margin-top:0.75rem; line-height:1.6;"></div>
   </div>
 </section>
@@ -206,107 +254,85 @@
 </footer>
 
 <script>
-  // --- Budgeting ---
-  function addExpense() {
-    const expensesDiv = document.getElementById('expenses');
-    const div = document.createElement('div');
-    div.innerHTML = '<input type="text" placeholder="Expense name" class="expense-name"> <input type="number" placeholder="Amount" class="expense-amount">';
-    expensesDiv.appendChild(div);
-  }
+/* --- Budget --- */
+function addExpense() {
+  const container = document.getElementById('expenses');
+  const div = document.createElement('div');
+  div.innerHTML = '<input type="text" placeholder="Expense name" class="expense-name"> <input type="number" placeholder="Amount" class="expense-amount">';
+  container.appendChild(div);
+}
 
-  function calculateBudget() {
-    const income = parseFloat(document.getElementById('income').value) || 0;
-    let totalExpenses = 0;
-    document.querySelectorAll('.expense-amount').forEach(e => totalExpenses += parseFloat(e.value) || 0);
-    const remaining = income - totalExpenses;
-    document.getElementById('results').textContent = remaining >= 0
-      ? `You have $${remaining.toFixed(2)} left this month.`
-      : `You are over budget by $${Math.abs(remaining).toFixed(2)}!`;
-  }
+function calculateBudget() {
+  const income = parseFloat(document.getElementById('income').value) || 0;
+  const amounts = Array.from(document.getElementsByClassName('expense-amount')).map(i=>parseFloat(i.value)||0);
+  const totalExpenses = amounts.reduce((a,b)=>a+b,0);
+  const remaining = income - totalExpenses;
+  document.getElementById('budgetResult').textContent =
+    remaining>=0?`You have $${remaining.toFixed(2)} left this month.`:`You are over budget by $${Math.abs(remaining).toFixed(2)}!`;
+}
 
-  // --- Savings ---
-  function updateSavings() {
-    const goal = parseFloat(document.getElementById('savingGoal').value) || 0;
-    const current = parseFloat(document.getElementById('currentSavings').value) || 0;
-    const percent = Math.min((current / goal) * 100, 100);
-    const bar = document.getElementById('savingsBar');
-    bar.style.width = percent + '%';
-    bar.textContent = Math.floor(percent) + '%';
-    const msg = document.getElementById('savingsMessage');
-    msg.textContent = percent >= 100
-      ? "🎉 Goal achieved! Keep saving!"
-      : `You have saved $${current.toFixed(2)} of $${goal.toFixed(2)}. Keep going!`;
-  }
+/* --- Savings --- */
+function updateSavings() {
+  const goal = parseFloat(document.getElementById('savingGoal').value) || 0;
+  const current = parseFloat(document.getElementById('currentSavings').value) || 0;
+  const percent = Math.min((current/goal)*100,100);
+  const bar = document.getElementById('savingsBar');
+  bar.style.width = percent + '%';
+  bar.textContent = Math.floor(percent)+'%';
+  const msg = document.getElementById('savingsMessage');
+  msg.textContent = percent>=100? "🎉 Goal achieved! Keep saving for the next one!":`You have saved $${current.toFixed(2)} of $${goal.toFixed(2)}. Keep going!`;
+}
 
-  // --- Investment ---
-  function simulateInvestment() {
-    const amount = parseFloat(document.getElementById('investAmount').value) || 0;
-    const rate = parseFloat(document.getElementById('returnRate').value)/100 || 0;
-    const years = parseInt(document.getElementById('years').value) || 0;
-    let finalAmount = amount;
-    for (let i=0;i<years;i++) finalAmount *= (1+rate);
-    document.getElementById('investmentResult').textContent =
-      `After ${years} years, your investment will grow to $${finalAmount.toFixed(2)}.`;
-  }
+/* --- Desktop Apps --- */
+let balance = 1000;
+let portfolio = {};
 
-  // --- Taxes ---
-  function residentIncomeTaxFY2024_25_2025_26(taxable){
-    if(taxable<=18200) return 0;
-    if(taxable<=45000) return (taxable-18200)*0.16;
-    if(taxable<=135000) return 4288+(taxable-45000)*0.30;
-    if(taxable<=190000) return 31288+(taxable-135000)*0.37;
-    return 51638+(taxable-190000)*0.45;
-  }
-  function residentIncomeTaxFY2023_24(taxable){
-    if(taxable<=18200) return 0;
-    if(taxable<=45000) return (taxable-18200)*0.19;
-    if(taxable<=120000) return 5092+(taxable-45000)*0.325;
-    if(taxable<=180000) return 29467+(taxable-120000)*0.37;
-    return 51667+(taxable-180000)*0.45;
-  }
-  function lito(taxable){
-    if(taxable<=37500) return 700;
-    if(taxable<=45000) return Math.max(0,700-0.05*(taxable-37500));
-    if(taxable<=66667) return Math.max(0,325-0.015*(taxable-45000));
-    return 0;
-  }
-  function medicareLevyBasic(taxable,exempt=false){
-    if(exempt) return 0;
-    const LOWER=27222,UPPER=34027,RATE=0.02;
-    if(taxable<=LOWER) return 0;
-    if(taxable<UPPER) return 0.10*(taxable-LOWER);
-    return RATE*taxable;
-  }
-  function calcAustTax(){
-    const yearSel=document.getElementById('taxYear').value;
-    const income=Math.max(0,parseFloat(document.getElementById('taxableIncome').value)||0);
-    const withheld=Math.max(0,parseFloat(document.getElementById('withheld').value)||0);
-    const exemptMedicare=(document.getElementById('medicareExempt').value==='yes');
-    let incomeTax=0;
-    if(yearSel==='2024'||yearSel==='2025') incomeTax=residentIncomeTaxFY2024_25_2025_26(income);
-    else incomeTax=residentIncomeTaxFY2023_24(income);
-    const litoAmt=lito(income);
-    const medicare=medicareLevyBasic(income,exemptMedicare);
-    const netIncomeTax=Math.max(0,incomeTax-litoAmt);
-    const totalTaxLiability=netIncomeTax+medicare;
-    const diff=withheld-totalTaxLiability;
-    const outcome=document.getElementById('taxOutcome');
-    const fmt=n=>n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
-    outcome.innerHTML=
-      `<strong>Results (${yearSel==='2025'?'2025–26':yearSel==='2024'?'2024–25':'2023–24'})</strong><br>
-      Taxable income: $${fmt(income)}<br>
-      Income tax (before offsets): $${fmt(incomeTax)}<br>
-      LITO: -$${fmt(litoAmt)}<br>
-      Medicare levy${exemptMedicare?' (exempt)':''}: $${fmt(medicare)}<br>
-      <strong>Total tax payable: $${fmt(totalTaxLiability)}</strong><br>
-      PAYG tax withheld: $${fmt(withheld)}<br>
-      <strong>${diff>=0?'Estimated REFUND':'Estimated AMOUNT OWED'}: $${fmt(Math.abs(diff))}</strong><br>
-      <small>Excludes MLS, HELP/HECS, other offsets or deductions.</small>`;
-  }
+function openApp(id){document.getElementById(id).classList.remove('hidden');}
+function closeApp(id){document.getElementById(id).classList.add('hidden');}
+
+function depositMoney(){balance+=100;document.getElementById('bankBalance').innerText=balance;}
+function withdrawMoney(){if(balance>=100){balance-=100;document.getElementById('bankBalance').innerText=balance;}}
+
+function buyInvestment(name,price){if(balance>=price){balance-=price;portfolio[name]=(portfolio[name]||0)+1;document.getElementById('bankBalance').innerText=balance;updatePortfolio();}}
+function sellInvestment(name,price){if(portfolio[name]&&portfolio[name]>0){portfolio[name]-=1;balance+=price;document.getElementById('bankBalance').innerText=balance;updatePortfolio();}}
+function updatePortfolio(){let list=document.getElementById('portfolio');list.innerHTML='';for(let a in portfolio){if(portfolio[a]>0)list.innerHTML+=`<li>${a}: ${portfolio[a]} units</li>`;}}
+
+// Price randomizer every 5s
+setInterval(()=>{
+  document.getElementById("stockA").innerText=Math.floor(40+Math.random()*20);
+  document.getElementById("cryptoX").innerText=Math.floor(150+Math.random()*100);
+},5000);
+
+/* --- Tax Calculator --- */
+function residentIncomeTaxFY2024_25_2025_26(taxable){if(taxable<=18200)return 0;if(taxable<=45000)return (taxable-18200)*0.16;if(taxable<=135000)return 4288+(taxable-45000)*0.30;if(taxable<=190000)return 31288+(taxable-135000)*0.37;return 51638+(taxable-190000)*0.45;}
+function residentIncomeTaxFY2023_24(taxable){if(taxable<=18200)return 0;if(taxable<=45000)return (taxable-18200)*0.19;if(taxable<=120000)return 5092+(taxable-45000)*0.325;if(taxable<=180000)return 29467+(taxable-120000)*0.37;return 51667+(taxable-180000)*0.45;}
+function lito(taxable){if(taxable<=37500)return 700;if(taxable<=45000)return Math.max(0,700-0.05*(taxable-37500));if(taxable<=66667)return Math.max(0,325-0.015*(taxable-45000));return 0;}
+function medicareLevyBasic(taxable,exempt=false){if(exempt)return 0;const L=27222,U=34027,R=0.02;if(taxable<=L)return 0;if(taxable<U)return 0.10*(taxable-L);return R*taxable;}
+function calcAustTax(){
+  const y=document.getElementById('taxYear').value;
+  const i=Math.max(0,parseFloat(document.getElementById('taxableIncome').value)||0);
+  const w=Math.max(0,parseFloat(document.getElementById('withheld').value)||0);
+  const e=document.getElementById('medicareExempt').value==='yes';
+  let t=y==='2024'||y==='2025'?residentIncomeTaxFY2024_25_2025_26(i):residentIncomeTaxFY2023_24(i);
+  const l=lito(i),m=medicareLevyBasic(i,e),net=Math.max(0,t-l),total=net+m,diff=w-total;
+  const fmt=n=>n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
+  let lines=[];
+  lines.push(`<strong>Results (${y==='2025'?'2025–26':y==='2024'?'2024–25':'2023–24'})</strong>`);
+  lines.push(`Taxable income: $${fmt(i)}`);
+  lines.push(`Income tax (before offsets): $${fmt(t)}`);
+  lines.push(`LITO: -$${fmt(l)}`);
+  lines.push(`Medicare levy${e?' (exempt)':''}: $${fmt(m)}`);
+  lines.push(`<strong>Total tax payable: $${fmt(total)}</strong>`);
+  lines.push(`PAYG withheld: $${fmt(w)}`);
+  lines.push(`<strong>${diff>=0?'Estimated REFUND':'Estimated AMOUNT OWED'}: $${fmt(Math.abs(diff))}</strong>`);
+  lines.push(`<small>Does not include MLS, HELP/HECS, SAPTO, or itemised deductions. Use official ATO tools for exact amounts.</small>`);
+  document.getElementById('taxOutcome').innerHTML=lines.join('<br>');
+}
 </script>
 
 </body>
 </html>
+
 
 
 
