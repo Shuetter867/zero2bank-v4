@@ -67,6 +67,38 @@
   <p>Saving is setting aside a part of the money you earn or receive instead of spending it all right away. For teens, saving is powerful because it builds good money habits early, gives you a safety net for unexpected costs, and helps you reach goals like buying new gear, saving for a car, or even investing later. To save effectively, start small—put aside a set percentage of every dollar you get, like 20%. Keep savings separate from your spending money (like in a bank account or digital wallet) so you’re less tempted to use it. Always save for both short-term goals (like a new phone) and long-term goals (like education or starting a business). Saving is not just about storing money—it’s about building discipline and giving your future self more freedom and options.</p>
 </section>
 
+<div class="calculator" id="savingTracker">
+  <h3>💰 Savings Progress Tracker</h3>
+  <label>Savings Goal: $<input type="number" id="savingGoal" value="500"></label><br>
+  <label>Current Savings: $<input type="number" id="currentSavings" value="0"></label><br>
+  <button onclick="updateSavings()">Update Progress</button>
+
+  <div style="margin-top:1rem; background:#222; border-radius:8px; height:30px; width:100%; overflow:hidden;">
+    <div id="savingsBar" style="background:#0ff; height:100%; width:0%; text-align:center; color:#000; line-height:30px; font-weight:bold;">0%</div>
+  </div>
+  <p id="savingsMessage" style="margin-top:0.5rem;"></p>
+</div>
+
+<script>
+function updateSavings() {
+  const goal = parseFloat(document.getElementById('savingGoal').value) || 0;
+  const current = parseFloat(document.getElementById('currentSavings').value) || 0;
+  const percent = Math.min((current / goal) * 100, 100);
+
+  const bar = document.getElementById('savingsBar');
+  bar.style.width = percent + '%';
+  bar.textContent = Math.floor(percent) + '%';
+
+  const msg = document.getElementById('savingsMessage');
+  if (percent >= 100) {
+    msg.textContent = "🎉 Goal achieved! Keep saving for the next one!";
+  } else {
+    msg.textContent = `You have saved $${current.toFixed(2)} of $${goal.toFixed(2)}. Keep going!`;
+  }
+}
+</script>
+
+  
 <section id="investing">
   <h2>Investing</h2>
   <p>Investing is when you use your money to buy something with the goal of making more money in the future, like stocks, bonds, or even starting a small business. For teens, investing can be a powerful way to grow wealth early, but it’s important to start simple and safe. The key is understanding that investments can go up and down—sometimes you’ll make money, sometimes you’ll lose it. That’s why you should never invest money you can’t afford to lose. A smart way to begin is by learning about index funds or ETFs, which spread your money across many companies to reduce risk. Teens should also focus on long-term growth instead of chasing “get rich quick” schemes. The dangers include losing money by following hype, scams, or not doing proper research. The best way to invest as a teen is to start small, be patient, and remember that consistent, careful investing over time usually beats risky bets.</p>
